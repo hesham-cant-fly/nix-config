@@ -12,6 +12,7 @@
   };
 
   programs.home-manager.enable = true;
+  programs.gh = (import ./home/gh.nix) params;
   programs.starship = (import ./home/starship.nix) params;
   programs.zoxide = (import ./home/zoxide.nix) params;
   programs.fzf = (import ./home/fzf.nix) params;
