@@ -19,12 +19,12 @@
   programs.zsh = (import ./home/zsh.nix) params;
   programs.git = (import ./home/git.nix) params;
   programs.neovim = (import ./home/neovim.nix) params;
+  programs.tmux = import ./home/tmux.nix params;
 
   home.packages = [
-    pkgs.neovim
+    # pkgs.neovim
     pkgs.tmux
     pkgs.nixd
-    pkgs.starship
   ];
 
   home.stateVersion = "25.05";
