@@ -32,40 +32,19 @@ in
     };
   };
 
-  programs.gh = import ./home/gh.nix params;
-  programs.starship = import ./home/starship.nix params;
-  programs.zoxide = import ./home/zoxide.nix params;
-  programs.fzf = import ./home/fzf.nix params;
-  programs.zsh = import ./home/zsh.nix params;
-  programs.git = import ./home/git.nix params;
-  programs.tmux = import ./home/tmux.nix params;
-  programs.nixvim = {
-    enable = true;
-    colorschemes.gruvbox.enable = true;
-
-    opts = {
-      number = true;
-      relativenumber = true;
-      shiftwidth = 4;
+  programs    = {
+    gh        = import ./home/gh.nix params;
+    starship  = import ./home/starship.nix params;
+    zoxide    = import ./home/zoxide.nix params;
+    fzf       = import ./home/fzf.nix params;
+    zsh       = import ./home/zsh.nix params;
+    git       = import ./home/git.nix params;
+    tmux      = import ./home/tmux.nix params;
+    nixvim    = import ./home/nixvim.nix params;
+    emacs     = {
+      enable  = true;
+      package = pkgs.emacs;
     };
-
-    plugins = {
-      lualine.enable = true;
-      telescope.enable = true;
-      web-devicons.enable = true;
-      lsp = {
-        enable = true;
-        servers = {
-          nixd.enable = true;
-          clangd.enable = true;
-        };
-      };
-    };
-  };
-
-  programs.emacs = {
-    enable = true;
-    package = pkgs.emacs;
   };
 
   home.packages = with pkgs; [
@@ -77,5 +56,6 @@ in
     fastfetch
 
     clang-tools
+    pkg-config
   ];
 }
