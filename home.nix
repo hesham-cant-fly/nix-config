@@ -57,5 +57,8 @@ in
 
     clang-tools
     pkg-config
+
+    jdk
+    jre8
   ];
 }

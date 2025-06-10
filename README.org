@@ -1,10 +1,8 @@
 #+title: My Nix flake
 
-* Header 1
-** Header 2
-*** Header 3
-**** Header 4
-***** Hedaer 5
 
-
-*hehehe*
+* todo
+- [ ] starship
+- [ ] neovim
+- [ ] pnpm
+- [ ] fzf
