@@ -1,4 +1,4 @@
-{ ... }@params:
+{ ... }:
 {
   enable = true;
   enableVteIntegration = true;
@@ -26,7 +26,7 @@
         zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
         # eval "$(fzf --zsh)"
-        # eval "$(zoxide init --cmd cd zsh)"
+        eval "$(zoxide init --cmd cd zsh)"
 
         export PNPM_HOME="/home/hesham/.local/share/pnpm"
         case ":$PATH:" in
