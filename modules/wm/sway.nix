@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ pkgs, ... }:
 let
   mod = "Mod4";
   ws1 = "1";
@@ -11,13 +11,33 @@ let
   ws8 = "8";
   ws9 = "9";
   ws10 = "10";
-  background = "/home/hesham/Downloads/wallhaven-7jgyre.jpg";
   editor = "emacsclient -a \"/home/hesham/.config/emacs/bin/doom run\" -c";
+  background = "/home/hesham/Downloads/wallhaven-7jgyre.jpg";
+
+  terminal = "kitty";
+  browser = "firefox";
 in {
   enable = true;
+  package = pkgs.swayfx;
+  checkConfig = false;
+  wrapperFeatures = {
+    gtk = true;
+    base = true;
+  };
+  extraConfig = /* config */ ''
+  corner_radius 5
+
+  # Blur Stuff
+  blur enable
+  blur_radius 5
+
+  # Shadow
+  shadows enable
+  shadow_blur_radius 70
+  shadow_color #1111117F
+  '';
   config = {
     modifier = mod;
-    terminal = "kitty";
     bindkeysToCode = true;
     defaultWorkspace = "workspace number ${ws1}";
     gaps = {
@@ -39,11 +59,10 @@ in {
       { command = "--no-startup-id swaybg --image \"${background}\" --mode \"fit\""; }
       { command = "--no-startup-id autotiling-rs -w 5 6 7 8 9 10"; }
       { command = "--no-startup-id /home/hesham/.config/emacs/bin/doom run --daemon"; }
-      { command = "--no-startup-id swaymsg \"workspace ${ws3}; layout tabbed\""; always = true; }
+      { command = "--no-startup-id swaymsg \"workspace ${ws3}; layout tabbed\""; }
 
       # Start Up Programs
-      { command = "firefox"; }
-      # { command = "kitty"; }
+      { command = "${browser}"; }
       { command = "${editor}"; }
       { command = "flatpak run dev.vencord.Vesktop"; }
       { command = "flatpak run com.rtosta.zapzap"; }
@@ -64,20 +83,20 @@ in {
       };
     };
     keybindings = {
-      "${mod}+Shift+n" = "exec swaync-client -t -sw";
-
-      "${mod}+q" = "exec kitty";
       "${mod}+c" = "kill";
+      "${mod}+Shift+r" = "reload";
+
+      "${mod}+q" = "exec ${terminal}";
+      "${mod}+b" = "exec ${browser}";
       "${mod}+r" = "exec rofi -show drun";
       "${mod}+Shift+e" = "exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes' 'swaymsg exit'";
-      "${mod}+Shift+r" = "reload";
+      "${mod}+Shift+n" = "exec swaync-client -t -sw";
 
       "${mod}+m" = "exec ${editor}";
       "${mod}+Shift+space" = "focus parent";
 
       # Layouts
       "${mod}+f" = "fullscreen toggle";
-      "${mod}+b" = "splith";
 
       "${mod}+g" = "layout toggle split";
       "${mod}+v" = "floating toggle";
