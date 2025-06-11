@@ -1,8 +1,11 @@
 #+title: My Nix flake
 
-
 * todo
 - [ ] starship
 - [ ] neovim
 - [ ] pnpm
 - [ ] fzf
+- [-] sway
+  - [ ] eww/ags/QuickShell
+- [ ] waydroid
+- [ ] steam

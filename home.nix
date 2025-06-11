@@ -1,15 +1,12 @@
-# TODO: starship
-# TODO: pnpm
-# TODO: fzf
-# TODO: zoxide
-
-{ inputs, pkgs, ... }@params:
+{ lib, inputs, pkgs, ... }@params:
 let
   nixvim = inputs.nixvim;
+  ags    = inputs.ags;
 in
 {
   imports = [
     nixvim.homeManagerModules.nixvim
+    ags.homeManagerModules.default
   ];
 
   home.stateVersion = "25.05";
@@ -19,7 +16,7 @@ in
   home.homeDirectory = "/home/hesham";
   home.sessionVariables = {
     EDITOR = "emacsclient -a 'doom run'";
-    PATH = "$PATH:~/.config/emacs/bin";
+    PATH = "$PATH:/home/hesham/.config/emacs/bin/:/home/hesham/.local/bin";
   };
 
   xdg.desktopEntries = {
@@ -32,33 +29,58 @@ in
     };
   };
 
-  programs    = {
-    gh        = import ./home/gh.nix params;
-    starship  = import ./home/starship.nix params;
-    zoxide    = import ./home/zoxide.nix params;
-    fzf       = import ./home/fzf.nix params;
-    zsh       = import ./home/zsh.nix params;
-    git       = import ./home/git.nix params;
-    tmux      = import ./home/tmux.nix params;
-    nixvim    = import ./home/nixvim.nix params;
+  wayland.windowManager.sway = import ./window-manager/sway.nix params;
+
+  programs        = {
+    gh            = import ./home/gh.nix       params;
+    starship      = import ./home/starship.nix params;
+    zoxide        = import ./home/zoxide.nix   params;
+    fzf           = import ./home/fzf.nix      params;
+    zsh           = import ./home/zsh.nix      params;
+    git           = import ./home/git.nix      params;
+    tmux          = import ./home/tmux.nix     params;
+    nixvim        = import ./home/nixvim.nix   params;
+    eww           = import ./home/eww.nix      params;
+    ags           = import ./home/ags.nix      params;
+    kitty         = import ./home/kitty.nix    params;
+    rofi          = {
+      enable = true;
+      cycle = true;
+      modes = [
+        "drun"
+      ];
+    };
+    bash          = {
+      enable      = true;
+      bashrcExtra = ''
+        exec zsh
+      '';
+    };
     emacs     = {
       enable  = true;
       package = pkgs.emacs;
     };
   };
 
+  services.flameshot.enable = true;
+  services.playerctld.enable = true;
+
   home.packages = with pkgs; [
     lsd
     nixd
     alacritty
-    kitty
 
     fastfetch
+    btop
 
     clang-tools
     pkg-config
 
     jdk
-    jre8
+
+    # Sway related stuff
+    autotiling-rs
+    swaybg
+    swaynotificationcenter
   ];
 }
