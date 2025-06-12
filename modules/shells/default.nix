@@ -2,7 +2,7 @@
 {
   imports = [
     ./zsh.nix
-    ./bash.nix
     ./tmux.nix
+    ./bash.nix
   ];
 }

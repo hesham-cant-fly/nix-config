@@ -19,6 +19,8 @@
 
     initContent =
       /* zsh */ ''
+        fastfetch --config examples/26.jsonc
+
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
         zstyle ':completion:*' list-colors "$${(s.:.)LS_COLORS}"
         zstyle ':completion:*' menu no
@@ -37,13 +39,14 @@
     sessionVariables = {};
 
     shellAliases = {
-      reload = "source ~/dotfiles/.zshrc";
+      reload = "source ~/.zshrc";
       cls = "clear";
-      ls = "lsd";
-      ll = "ls -l";
-      la = "ls -a";
-      fetch = "fastfetch --config examples/6.jsonc";
-      # fetch = "fastfetch --config examples/26.jsonc";
+      ls = "eza";
+      ll = "eza -l";
+      la = "eza -a";
+      # fetch = "fastfetch --config examples/6.jsonc";
+      fetch = "fastfetch --config examples/26.jsonc";
+      quickfetch = "fastfetch --config examples/8.jsonc";
       brave = "brave-browser --user-data-dir=~/.config/brave_shared";
       memgrind = "valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=valgrind-out.txt";
     };

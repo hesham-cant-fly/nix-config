@@ -12,5 +12,5 @@
 * TODO Installing
 - [ ] pnpm
 - [ ] waydroid
-- [ ] steam
+- [X] steam
   - [[https://www.youtube.com/watch?v=qlfm3MEbqYA][Vimjoyer]]

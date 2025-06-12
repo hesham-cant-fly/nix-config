@@ -7,6 +7,7 @@
     ./editors
     ./shells
     ./utiles
+    ./programs
     ./wm
   ];
   programs    = {

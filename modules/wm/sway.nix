@@ -43,8 +43,7 @@ in {
       bindkeysToCode = true;
       defaultWorkspace = "workspace number ${ws1}";
       gaps = {
-        inner = 5;
-        outer = 5;
+        inner = 13;
       };
       assigns = {
         "workspace number ${ws1}" = [{ app_id = "firefox"; }];
@@ -58,7 +57,7 @@ in {
       startup = [
         # Backends/Daemons
         { command = "swaync"; }
-        { command = "--no-startup-id swaybg --image \"${background}\" --mode \"fit\""; }
+        # { command = "--no-startup-id swaybg --image \"${background}\" --mode \"fit\""; }
         { command = "--no-startup-id autotiling-rs -w 5 6 7 8 9 10"; }
         { command = "--no-startup-id /home/hesham/.config/emacs/bin/doom run --daemon"; }
         { command = "--no-startup-id swaymsg \"workspace ${ws2}; layout tabbed\""; }

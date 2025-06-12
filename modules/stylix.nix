@@ -3,10 +3,13 @@
   stylix = with pkgs; {
     enable = true;
     enableReleaseChecks = false;
-    base16Scheme = "${base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    # base16Scheme = "${base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     # image = /home/hesham/Downloads/wallhaven-7jgyre.jpg;
     # image = /home/hesham/Downloads/wallhaven-1q83qg.jpg;
-    image = /home/hesham/Downloads/wallhaven-5yd6d5.png;
+    # image = /home/hesham/Downloads/wallhaven-5yd6d5.png;
+    # image = /home/hesham/Downloads/wallhaven-o5k7kl.jpg;
+    # image = /home/hesham/Downloads/wallpaperflare.com_wallpaper.jpg;
+    image = /home/hesham/Downloads/wallpaperflare.com_wallpaper-gjwku.jpg;
     polarity = "dark";
 
     cursor.package = bibata-cursors;
