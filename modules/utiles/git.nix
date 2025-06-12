@@ -1,6 +1,8 @@
 { ... }:
 {
-  enable = true;
-  userName = "hesham-cant-fly";
-  userEmail = "www.hichamhot@gmail.com";
+  programs.git = {
+    enable = true;
+    userName = "hesham-cant-fly";
+    userEmail = "www.hichamhot@gmail.com";
+  };
 }

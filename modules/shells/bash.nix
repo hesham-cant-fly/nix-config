@@ -1,7 +1,10 @@
 { ... }:
 {
-  enable      = true;
-  bashrcExtra = ''
-    exec zsh
-  '';
+  programs.bash = {
+    enable      = true;
+    bashrcExtra =
+      ''
+        exec zsh
+      '';
+  };
 }

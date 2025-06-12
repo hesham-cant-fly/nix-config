@@ -17,9 +17,15 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Stylix
+    stylix = {
+      url = "github:nix-community/stylix/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
     let
       system = "x86_64-linux";
       username = "hesham";
@@ -30,12 +36,14 @@
           pkgs = import nixpkgs {
             system = system;
           };
-          modules = [ ./home.nix ];
         };
         homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
           extraSpecialArgs = { inherit inputs; };
-          modules = [ ./home/home.nix ];
+          modules = [
+            stylix.homeManagerModules.stylix
+            ./home/home.nix
+          ];
         };
       };
 }

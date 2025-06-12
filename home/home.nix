@@ -32,29 +32,14 @@ in
 
   # wayland.windowManager.sway = import ./window-manager/sway.nix params;
 
-  # programs    = {
-  #   gh        = import ./home/gh.nix       params;
-  #   starship  = import ./home/starship.nix params;
-  #   zoxide    = import ./home/zoxide.nix   params;
-  #   fzf       = import ./home/fzf.nix      params;
-  #   zsh       = import ./home/zsh.nix      params;
-  #   git       = import ./home/git.nix      params;
-  #   tmux      = import ./home/tmux.nix     params;
-  #   nixvim    = import ./home/nixvim.nix   params;
-  #   eww       = import ./home/eww.nix      params;
-  #   ags       = import ./home/ags.nix      params;
-  #   kitty     = import ./home/kitty.nix    params;
-  #   btop      = import ./home/btop.nix     params;
-  #   rofi      = import ./home/rofi.nix     params;
-  #   bash      = import ./home/bash.nix     params;
-  #   emacs     = {
-  #     enable  = true;
-  #     package = pkgs.emacs;
-  #   };
-  # };
+  stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  # stylix.image = ../../assets/images/wall1.jpg;
+  stylix.polarity = "dark";
 
   services.flameshot.enable = true;
   services.playerctld.enable = true;
+  xserver.enable = true;
 
   home.packages = with pkgs; [
     lsd
@@ -67,6 +52,8 @@ in
     pkg-config
 
     jdk
+
+    pavucontrol
 
     # Sway related stuff
     autotiling-rs
