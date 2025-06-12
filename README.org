@@ -1,11 +1,16 @@
 #+title: My Nix flake
 
-* todo
+* TODO Configuring
 - [ ] starship
 - [ ] neovim
-- [ ] pnpm
 - [ ] fzf
-- [-] sway
+- [ ] sway
   - [ ] eww/ags/QuickShell
+    - [[https://www.youtube.com/watch?v=GvpTUKaXqNk][Vimjoyer AGS]]
+    - [[https://youtu.be/UP3pJT1-UoQ?si=LTCqWbTkzkEpk0B3][Vimjoyer EWW]]
+
+* TODO Installing
+- [ ] pnpm
 - [ ] waydroid
 - [ ] steam
+  - [[https://www.youtube.com/watch?v=qlfm3MEbqYA][Vimjoyer]]

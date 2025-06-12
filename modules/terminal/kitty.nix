@@ -1,6 +1,6 @@
-{ ... }:
+{ lib, ... }:
 {
-  programs.kitty = {
+  programs.kitty = lib.mkDefault{
     enable = true;
     shellIntegration.enableZshIntegration = true;
     settings = {

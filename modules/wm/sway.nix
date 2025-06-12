@@ -12,7 +12,7 @@ let
   ws9 = "9";
   ws10 = "10";
   editor = "emacsclient -a \"/home/hesham/.config/emacs/bin/doom run\" -c";
-  background = "/home/hesham/Downloads/wallhaven-7jgyre.jpg";
+  background = "/home/hesham/Downloads/wallhaven-5yd6d5.png";
 
   terminal = "kitty";
   browser = "firefox";
@@ -25,18 +25,19 @@ in {
       gtk = true;
       base = true;
     };
-    extraConfig = /* config */ ''
-  corner_radius 5
+    extraConfig =
+      /* config */ ''
+        corner_radius 5
 
-  # Blur Stuff
-  blur enable
-  blur_radius 5
+        # Blur Stuff
+        blur enable
+        blur_radius 5
 
-  # Shadow
-  shadows enable
-  shadow_blur_radius 70
-  shadow_color #1111117F
-  '';
+        # Shadow
+        shadows enable
+        shadow_blur_radius 70
+        shadow_color #1111117F
+      '';
     config = {
       modifier = mod;
       bindkeysToCode = true;
@@ -47,8 +48,8 @@ in {
       };
       assigns = {
         "workspace number ${ws1}" = [{ app_id = "firefox"; }];
-        "workspace number ${ws2}" = [{ class = "Emacs"; }];
-        "workspace number ${ws3}" = [
+        "workspace number ${ws3}" = [{ class = "Emacs"; }];
+        "workspace number ${ws2}" = [
           { app_id = "com.rtosta.zapzap"; }
           { app_id = "org.telegram.desktop"; }
           { class = "vesktop"; }
@@ -60,7 +61,7 @@ in {
         { command = "--no-startup-id swaybg --image \"${background}\" --mode \"fit\""; }
         { command = "--no-startup-id autotiling-rs -w 5 6 7 8 9 10"; }
         { command = "--no-startup-id /home/hesham/.config/emacs/bin/doom run --daemon"; }
-        { command = "--no-startup-id swaymsg \"workspace ${ws3}; layout tabbed\""; }
+        { command = "--no-startup-id swaymsg \"workspace ${ws2}; layout tabbed\""; }
 
         # Start Up Programs
         { command = "${browser}"; }

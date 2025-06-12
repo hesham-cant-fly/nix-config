@@ -42,6 +42,8 @@
       ls = "lsd";
       ll = "ls -l";
       la = "ls -a";
+      fetch = "fastfetch --config examples/6.jsonc";
+      # fetch = "fastfetch --config examples/26.jsonc";
       brave = "brave-browser --user-data-dir=~/.config/brave_shared";
       memgrind = "valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=valgrind-out.txt";
     };

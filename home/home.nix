@@ -20,26 +20,8 @@ in
     PATH = "$PATH:/home/hesham/.config/emacs/bin/:/home/hesham/.local/bin";
   };
 
-  xdg.desktopEntries = {
-    doom-emacs = {
-      name = "Doom Emacs";
-      genericName = "Text Editor";
-      exec = "/home/hesham/.config/emacs/bin/doom run";
-      icon = "emacs";
-      terminal = false;
-    };
-  };
-
-  # wayland.windowManager.sway = import ./window-manager/sway.nix params;
-
-  stylix.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-  # stylix.image = ../../assets/images/wall1.jpg;
-  stylix.polarity = "dark";
-
   services.flameshot.enable = true;
   services.playerctld.enable = true;
-  xserver.enable = true;
 
   home.packages = with pkgs; [
     lsd
