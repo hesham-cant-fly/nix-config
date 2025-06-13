@@ -19,7 +19,7 @@
 
     initContent =
       /* zsh */ ''
-        fastfetch --config examples/26.jsonc
+        fastfetch --config examples/8.jsonc
 
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
         zstyle ':completion:*' list-colors "$${(s.:.)LS_COLORS}"

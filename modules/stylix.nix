@@ -3,13 +3,16 @@
   stylix = with pkgs; {
     enable = true;
     enableReleaseChecks = false;
-    # base16Scheme = "${base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    # base16Scheme = "${base16-schemes}/share/themes/onedark.yaml";
+    base16Scheme = "${base16-schemes}/share/themes/gruvbox-dark.yaml";
     # image = /home/hesham/Downloads/wallhaven-7jgyre.jpg;
     # image = /home/hesham/Downloads/wallhaven-1q83qg.jpg;
     # image = /home/hesham/Downloads/wallhaven-5yd6d5.png;
     # image = /home/hesham/Downloads/wallhaven-o5k7kl.jpg;
     # image = /home/hesham/Downloads/wallpaperflare.com_wallpaper.jpg;
-    image = /home/hesham/Downloads/wallpaperflare.com_wallpaper-gjwku.jpg;
+    # image = /home/hesham/Downloads/wallpaperflare.com_wallpaper-gjwku.jpg;
+    # image = /home/hesham/Downloads/wallpaperflare.com_wallpaper-mountains.jpg;
+    image = /home/hesham/Downloads/wallpaperflare.com_wallpaper-cool-sunset.jpg;
     polarity = "dark";
 
     cursor.package = bibata-cursors;
@@ -17,7 +20,7 @@
     cursor.size = 30;
 
     opacity = {
-      applications = 0.7;
+      applications = 1.0;
       terminal = 0.7;
       desktop = 1.0;
       popups = 1.0;
@@ -38,7 +41,7 @@
       };
 
       sizes = {
-        applications = 13;
+        applications = 10;
         terminal = 16;
         desktop = 10;
         popups = 10;

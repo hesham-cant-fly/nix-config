@@ -12,7 +12,6 @@ let
   ws9 = "9";
   ws10 = "10";
   editor = "emacsclient -a \"/home/hesham/.config/emacs/bin/doom run\" -c";
-  background = "/home/hesham/Downloads/wallhaven-5yd6d5.png";
 
   terminal = "kitty";
   browser = "firefox";
@@ -26,25 +25,31 @@ in {
       base = true;
     };
     extraConfig =
-      /* config */ ''
-        corner_radius 5
+      /* config */''
+        corner_radius 12
 
         # Blur Stuff
         blur enable
-        blur_radius 5
+        blur_radius 3
 
         # Shadow
         shadows enable
-        shadow_blur_radius 70
+        shadow_blur_radius 55
         shadow_color #1111117F
       '';
     config = {
       modifier = mod;
       bindkeysToCode = true;
       defaultWorkspace = "workspace number ${ws1}";
-      gaps = {
-        inner = 13;
-      };
+      window.border = 3;
+      window.titlebar = false;
+      gaps.inner = 13;
+      bars = [
+        {
+          position = "top";
+          command = "waybar";
+        }
+      ];
       assigns = {
         "workspace number ${ws1}" = [{ app_id = "firefox"; }];
         "workspace number ${ws3}" = [{ class = "Emacs"; }];
@@ -57,6 +62,7 @@ in {
       startup = [
         # Backends/Daemons
         { command = "swaync"; }
+
         # { command = "--no-startup-id swaybg --image \"${background}\" --mode \"fit\""; }
         { command = "--no-startup-id autotiling-rs -w 5 6 7 8 9 10"; }
         { command = "--no-startup-id /home/hesham/.config/emacs/bin/doom run --daemon"; }

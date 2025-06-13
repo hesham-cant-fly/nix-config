@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./ags.nix
     ./btop.nix
     ./eww.nix
     ./fzf.nix
@@ -10,6 +9,8 @@
     ./rofi.nix
     ./starship.nix
     ./zoxide.nix
+    ./waybar.nix
     ./eza.nix
+    ./fd.nix
   ];
 }
