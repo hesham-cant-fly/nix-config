@@ -5,14 +5,15 @@
     enableReleaseChecks = false;
     # base16Scheme = "${base16-schemes}/share/themes/onedark.yaml";
     base16Scheme = "${base16-schemes}/share/themes/gruvbox-dark.yaml";
+    # base16Scheme = "${base16-schemes}/share/themes/moonlight.yaml";
     # image = /home/hesham/Downloads/wallhaven-7jgyre.jpg;
     # image = /home/hesham/Downloads/wallhaven-1q83qg.jpg;
-    # image = /home/hesham/Downloads/wallhaven-5yd6d5.png;
+    image = /home/hesham/Downloads/wallhaven-5yd6d5.png;
     # image = /home/hesham/Downloads/wallhaven-o5k7kl.jpg;
     # image = /home/hesham/Downloads/wallpaperflare.com_wallpaper.jpg;
     # image = /home/hesham/Downloads/wallpaperflare.com_wallpaper-gjwku.jpg;
     # image = /home/hesham/Downloads/wallpaperflare.com_wallpaper-mountains.jpg;
-    image = /home/hesham/Downloads/wallpaperflare.com_wallpaper-cool-sunset.jpg;
+    # image = /home/hesham/Downloads/wallpaperflare.com_wallpaper-cool-sunset.jpg;
     polarity = "dark";
 
     cursor.package = bibata-cursors;

@@ -1,6 +1,7 @@
-{ inputs, pkgs, ... }:
+{ inputs, system, pkgs, ... }:
 let
   nixvim = inputs.nixvim;
+  quickshell = inputs.quickshell;
 in
 {
   imports = [
@@ -24,12 +25,15 @@ in
   services.playerctld.enable = true;
 
   home.packages = with pkgs; [
+    pandoc
+    ed
+
     nodejs
     pnpm
     python314
-    # python314Packages.pip
     tree-sitter
-    # fd
+    quickshell.packages.${system}.default
+    kdePackages.qtdeclarative
 
     lsd
     nixd

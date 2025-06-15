@@ -20,16 +20,12 @@
 
     # QuickShell
     quickshell = {
-      # remove ?ref=v0.1.0 to track the master branch
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-
-      # THIS IS IMPORTANT
-      # Mismatched system dependencies will lead to crashes and other issues.
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, nix, ... }@inputs:
     let
       system = "x86_64-linux";
       username = "hesham";
@@ -46,8 +42,10 @@
           pkgs = pkgs;
           extraSpecialArgs = {
             inherit inputs;
+	          system = system;
           };
           modules = [
+            { nixpkgs.overlays = [ nix.overlays.default ]; }
             stylix.homeModules.stylix
             ./home/home.nix
           ];

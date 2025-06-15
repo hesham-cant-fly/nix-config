@@ -25,7 +25,7 @@ in {
       base = true;
     };
     extraConfig =
-      /* config */''
+      /* qmljs */''
         corner_radius 12
 
         # Blur Stuff
@@ -45,10 +45,6 @@ in {
       window.titlebar = false;
       gaps.inner = 13;
       bars = [
-        {
-          position = "top";
-          command = "waybar";
-        }
       ];
       assigns = {
         "workspace number ${ws1}" = [{ app_id = "firefox"; }];
@@ -61,6 +57,7 @@ in {
       };
       startup = [
         # Backends/Daemons
+        { command = "waybar"; }
         { command = "swaync"; }
 
         # { command = "--no-startup-id swaybg --image \"${background}\" --mode \"fit\""; }
