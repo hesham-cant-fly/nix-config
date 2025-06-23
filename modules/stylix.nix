@@ -6,6 +6,7 @@
     # base16Scheme = "${base16-schemes}/share/themes/onedark.yaml";
     base16Scheme = "${base16-schemes}/share/themes/gruvbox-dark.yaml";
     # base16Scheme = "${base16-schemes}/share/themes/moonlight.yaml";
+    # base16Scheme = "${base16-schemes}/share/themes/tokyo-night-dark.yaml";
     # image = /home/hesham/Downloads/wallhaven-7jgyre.jpg;
     # image = /home/hesham/Downloads/wallhaven-1q83qg.jpg;
     image = /home/hesham/Downloads/wallhaven-5yd6d5.png;

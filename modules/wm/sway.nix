@@ -62,7 +62,7 @@ in {
 
         # { command = "--no-startup-id swaybg --image \"${background}\" --mode \"fit\""; }
         { command = "--no-startup-id autotiling-rs -w 5 6 7 8 9 10"; }
-        { command = "--no-startup-id /home/hesham/.config/emacs/bin/doom run --daemon"; }
+        # { command = "--no-startup-id /home/hesham/.config/emacs/bin/doom run --daemon"; }
         { command = "--no-startup-id swaymsg \"workspace ${ws2}; layout tabbed\""; }
 
         # Start Up Programs

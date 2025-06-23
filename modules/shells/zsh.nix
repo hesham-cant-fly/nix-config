@@ -44,6 +44,7 @@
       ls = "eza";
       ll = "eza -l";
       la = "eza -a";
+      ci = "zi";
       # fetch = "fastfetch --config examples/6.jsonc";
       fetch = "fastfetch --config examples/26.jsonc";
       quickfetch = "fastfetch --config examples/8.jsonc";

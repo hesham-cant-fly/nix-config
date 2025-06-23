@@ -18,15 +18,25 @@ in
   home.homeDirectory = "/home/hesham";
   home.sessionVariables = {
     EDITOR = "emacsclient -a 'doom run'";
-    PATH = "$PATH:/home/hesham/.config/emacs/bin/:/home/hesham/.local/bin";
+    PATH = "$PATH:/home/hesham/.config/emacs/bin/:/home/hesham/.local/bin:/home/hesham/programs/vlang";
   };
 
   services.flameshot.enable = true;
   services.playerctld.enable = true;
 
   home.packages = with pkgs; [
+    gdb
+    file
+    unzip
+    zip
+    ripgrep
+    qbittorrent
+    wl-clipboard
+    weylus
+    alsa-utils
     pandoc
     ed
+    gimp
 
     nodejs
     pnpm
